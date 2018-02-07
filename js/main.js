@@ -1,42 +1,36 @@
-function primeNumber(x, y) {
-	if (x < (y)) {
-		var n = 2;
-		var i = 0;
-		for (var z = x; z <= y; z++) {
-			i = 0;
-			if (z > 1) {
-			for (n = 2; n < z; n++) {
-				if ((z===1) || (z % n === 0)) {
-					i = 1;
+function primeNumber(min, max) {
+	if (min < (max)) {
+		var divisor = 2;
+		var res = 0;
+		for (var currentNum = min; currentNum <= max; currentNum++) {
+			res = 0;
+			if (currentNum > 1) {
+			
+			for (divisor = 2; divisor < currentNum; divisor++) {
+				if ((currentNum === 1) || (currentNum % divisor === 0)) {
+					res = 1;
 					 break;
 				}
 				
 			}
 
-			if (i == 0) {
-				document.write(z +" ");
+			if (res == 0) {
+				document.write(currentNum +" ");
 			}
 		
 		}
 		}
 
-
-
-		 
-		
 	} else {
 		alert('Wrong interval!');
 		}
 	
-	
-
-
 	}
 
 
 
-primeNumber (x = +prompt('Please, input your minimum number'),
-	y = +prompt('Please, input  your maximum number'));
+primeNumber (min = +prompt('Please, input your minimum number'),
+			 max = +prompt('Please, input  your maximum number'));
 
 
 
